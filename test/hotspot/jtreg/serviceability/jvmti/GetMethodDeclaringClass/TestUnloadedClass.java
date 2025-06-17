@@ -26,7 +26,6 @@
  * @test
  * @bug 8339725
  * @summary Stress test GetMethodDeclaringClass
- * @requires vm.jvmti
  * @requires (os.family == "linux")
  * @library /test/lib
  * @run driver/timeout=300 TestUnloadedClass
@@ -44,7 +43,7 @@ import java.lang.reflect.Constructor;
 
 public class TestUnloadedClass {
     public static void main(String[] args) throws Exception {
-        ProcessBuilder pb = ProcessTools.createTestJavaProcessBuilder(
+        ProcessBuilder pb = ProcessTools.createJavaProcessBuilder(
                 "-agentpath:" + Utils.TEST_NATIVE_PATH + File.separator + System.mapLibraryName("TestUnloadedClass"),
                 "-Xmx50m",
                 "Test");

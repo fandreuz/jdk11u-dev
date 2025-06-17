@@ -848,6 +848,8 @@ BUILD_HOTSPOT_JTREG_LIBRARIES_CFLAGS_libVirtualMachine07agent02 := $(NSK_AOD_INC
 BUILD_HOTSPOT_JTREG_LIBRARIES_CFLAGS_libVirtualMachine07agent03 := $(NSK_AOD_INCLUDES)
 BUILD_HOTSPOT_JTREG_LIBRARIES_CFLAGS_libVirtualMachine09agent00 := $(NSK_AOD_INCLUDES)
 
+BUILD_HOTSPOT_JTREG_LIBRARIES_CFLAGS_libTestUnloadedClass := -std=c++11
+
 ################################################################################
 
 # Platform specific setup
