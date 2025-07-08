@@ -506,7 +506,11 @@ protected:
 
   oop class_loader() const;
 
-  virtual oop klass_holder() const      { return class_loader(); }
+  // This loads the klass's holder as a phantom. This is useful when a weak Klass
+  // pointer has been "peeked" and then must be kept alive before it may
+  // be used safely.  All uses of klass_holder need to apply the appropriate barriers,
+  // except during GC.
+  oop klass_holder() const { return class_loader_data()->holder_phantom(); }
 
  protected:
   virtual Klass* array_klass_impl(bool or_null, int rank, TRAPS);
